@@ -2,9 +2,8 @@
 
 Goal to make a simple To-Do List and customize it to my needs in the future
 
-- [ ] Tasks
-- [ ] Group Tasks
-- [ ] Persistence save
-- [ ] add notes
-- [ ] create masterlist
-- [ ] move from masterlist to tasks
+- [ ] Add Tasks
+- [ ] check off tasks and move to archive
+- [ ] Move from masterlist to task list
+- [ ] Archive
+- [ ] format for tasks
