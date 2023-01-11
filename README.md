@@ -2,8 +2,9 @@
 
 Goal to make a simple To-Do List and customize it to my needs in the future
 
-- [ ] Add Tasks
-- [ ] check off tasks and move to archive
+- [x] Add Tasks
+- [x] check off tasks
+- [ ] move to archive after check
 - [ ] Move from masterlist to task list
 - [ ] Archive
-- [ ] format for tasks
+- [x] format for tasks
