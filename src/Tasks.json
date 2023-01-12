@@ -3,63 +3,54 @@
         "task": "Aufgabe 1",
         "checked": false,
         "list": "Masterlist",
-        "est": 120,
-        "id": 0
+        "est": 120
     },
     {
         "task": "Aufgabe 2",
         "checked": false,
         "list": "Tasks",
-        "est": 120,
-        "id": 1
+        "est": 120
     },
     {
         "task": "Aufgabe 3",
         "checked": true,
         "list": "Tasks",
-        "est": 120,
-        "id": 2
+        "est": 120
     },
     {
         "task": "Aufgabe 4",
         "checked": false,
         "list": "Masterlist",
-        "est": 120,
-        "id": 3
+        "est": 120
     },
     {
         "task": "Aufgabe 5",
         "checked": false,
         "list": "Tasks",
-        "est": 120,
-        "id": 4
+        "est": 120
     },
     {
         "task": "Aufgabe 6",
         "checked": false,
         "list": "Masterlist",
-        "est": 120,
-        "id": 5
+        "est": 120
     },
     {
         "task": "Aufgabe 7",
         "checked": true,
         "list": "Masterlist",
-        "est": 120,
-        "id": 6
+        "est": 120
     },
     {
         "task": "Aufgabe 8",
         "checked": false,
         "list": "Masterlist",
-        "est": 120,
-        "id": 7
+        "est": 120
     },
     {
         "task": "Aufgabe 9",
         "checked": false,
         "list": "Masterlist",
-        "est": 120,
-        "id": 8
+        "est": 120
     }
 ]

@@ -11,10 +11,10 @@ const TaskHeader = () => {
     );
 }
 const TaskBody = props => {
-    const rows = props.taskData.map((row) => {
+    const rows = props.taskData.map((row, id) => {
         return(
-            <tr key={row.id}>
-                <td>  <input type="checkbox" checked={row.checked} onChange={() => props.removeTask(row.id)}/> </td>
+            <tr key={id}>
+                <td>  <input type="checkbox" checked={row.checked} onChange={() => props.removeTask(id, row.list )}/> </td>
                 <td>{row.task}</td>
             </tr>
         )

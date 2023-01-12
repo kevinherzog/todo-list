@@ -7,8 +7,7 @@ class TaskAdd extends Component {
             task: '',
             checked: false,
             list: "Masterlist",
-            est: 120,
-            id: ''
+            est: 120
         };
 
         this.state = this.initialState;
