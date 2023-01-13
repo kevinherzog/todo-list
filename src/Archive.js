@@ -6,7 +6,6 @@ const TaskHeader = () => {
             <tr>
                <th>Check</th>
                <th>Task</th>
-               <th>Move Task</th>
             </tr>
         </thead>
     );
@@ -17,20 +16,19 @@ const TaskBody = props => {
             <tr key={id}>
                 <td>  <input type="checkbox" checked={row.checked} onChange={() => props.removeTask(id, row.list )}/> </td>
                 <td>{row.task}</td>
-                <td><button onClick={() => props.moveTask(id, row.list)} >Move</button></td>
             </tr>
         )
     });
     return <tbody>{rows}</tbody>;
 }
 
-const TaskTable = (props) => {
-    const { taskData, removeTask, moveTask } = props;
+const Archive = (props) => {
+    const { taskData, removeTask } = props;
     return(
         <table>
             <TaskHeader />
-            <TaskBody taskData={taskData} removeTask={removeTask} moveTask={moveTask}/>
+            <TaskBody taskData={taskData} removeTask={removeTask} />
         </table>
     )
 }
-export default TaskTable;
+export default Archive;
