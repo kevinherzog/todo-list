@@ -4,7 +4,7 @@ import TaskTable from './Tasks';
 import Archive from './Archive';
 import taskdata from "./Tasks.json";
 
-
+//taskdata = localStorage.getItem('')
 class App extends Component {
   state = {
     archive: taskdata.filter((item)=> {
@@ -19,7 +19,9 @@ class App extends Component {
     };
 
   handleSubmit = yeet => {
-    this.setState({master: [...this.state.master, yeet]})
+    if (yeet.task !== '') {
+      this.setState({master: [...this.state.master, yeet]})
+    }
   }
   removeTask = (index, list) =>{
     if(list==="Masterlist"){
