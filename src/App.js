@@ -5,19 +5,15 @@ import Archive from './Archive';
 import taskdata from "./Tasks.json";
 
 //taskdata = localStorage.getItem('')
+//const[item, setItem] = React.useState([]);
 class App extends Component {
   state = {
-    archive: taskdata.filter((item)=> {
-      if (item.checked === true) {
-        item.list = "archive"}
-        return item.checked === true
-      }),
-    daily: taskdata.filter((item)=> {
-      return item.list === "Tasks"}), 
-    master: taskdata.filter((item)=> {
-      return item.list === "Masterlist"}),
+    archive: loadArchive(),
+    daily: loadDaily(), 
+    master: loadMaster(),
     };
-
+  
+  
   handleSubmit = yeet => {
     if (yeet.task !== '') {
       this.setState({master: [...this.state.master, yeet]})
@@ -93,10 +89,11 @@ class App extends Component {
     }
   }
   render() {
+    
     return (
       <div>
         <h1>To-Do List</h1>
-        <TaskAdd handleSubmit={this.handleSubmit} />
+        <TaskAdd handleSubmit={this.handleSubmit} init={this.init} />
         <h2>Today</h2>
         <TaskTable taskData={this.state.daily} removeTask={this.removeTask} moveTask={this.moveTask}/>
         <h2>Masterlist</h2>
@@ -108,4 +105,33 @@ class App extends Component {
   }
 }
 
+function loadArchive() {
+  if (localStorage.getItem('archive') !== 'undefined') {
+    return JSON.parse(localStorage.getItem('archive'));
+  }else{
+    return taskdata.filter((item)=> {
+      if (item.checked === true) {
+        item.list = "archive"}
+        return item.checked === true
+      })
+  }  
+}
+function loadDaily() {
+  if (localStorage.getItem('daily') !== 'undefined' && localStorage.getItem('daily') !== null) {
+    return JSON.parse(localStorage.getItem('daily'));
+  }else{
+    return taskdata.filter((item)=> {
+        return item.list === 'Tasks'
+      })
+  }  
+}
+function loadMaster() {
+  if (localStorage.getItem('master') !== 'undefined' && localStorage.getItem('master') !== null) {
+    return JSON.parse(localStorage.getItem('master'));
+  }else{
+    return taskdata.filter((item)=> {
+        return item.list === 'Masterlist'
+      })
+  }  
+}
 export default App;
