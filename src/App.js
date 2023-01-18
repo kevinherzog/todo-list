@@ -14,9 +14,10 @@ class App extends Component {
     };
   
   
-  handleSubmit = yeet => {
-    if (yeet.task !== '') {
-      this.setState({master: [...this.state.master, yeet]})
+  handleSubmit = item => {
+    if (item.task !== '') {
+      this.setState({master: [...this.state.master, item]}, () => {setMaster(this.state.master)})
+      console.log(this.state)
     }
   }
   removeTask = (index, list) =>{
@@ -28,11 +29,11 @@ class App extends Component {
             task.list = "archive"
             this.setState({
               archive: [...this.state.archive, task]
-            })
+            }, () => {setArchive(this.state.archive)})
           }
           return i !== index;
         })
-      });
+      }, () => {setMaster(this.state.master)});
     }else if(list === "Tasks"){
       this.setState({
         daily: this.state.daily.filter((task, i) => {          
@@ -41,11 +42,11 @@ class App extends Component {
             task.list = "archive"
             this.setState({
               archive: [...this.state.archive, task]
-            })
+            }, () => {setArchive(this.state.archive)})
           }
           return i !== index;
         })
-      });
+      }, () => {setDaily(this.state.daily)});
     }else{
       this.setState({
         archive: this.state.archive.filter((task, i) => {
@@ -54,11 +55,11 @@ class App extends Component {
             task.list = "Masterlist";
             this.setState({
               master: [...this.state.master, task]
-            });
+            }, () => {setMaster(this.state.master)});
           }
           return i !== index;
         })
-      });
+      }, () => {setArchive(this.state.archive)});
     }
   }
   moveTask = (index, list) => {
@@ -69,11 +70,11 @@ class App extends Component {
             task.list = "Tasks"
             this.setState({
               daily: [...this.state.daily, task]
-            })
+            }, () => {setDaily(this.state.daily)})
           }
           return i !== index;
         })
-      });
+      }, () => {setMaster(this.state.master)});
     }else{
       this.setState({
         daily: this.state.daily.filter((task, i) => {          
@@ -81,11 +82,11 @@ class App extends Component {
             task.list = "Masterlist"
             this.setState({
               master: [...this.state.master, task]
-            })
+            }, () => {setMaster(this.state.master)})
           }
           return i !== index;
         })
-      });
+      }, () => {setDaily(this.state.daily)});
     }
   }
   render() {
@@ -106,7 +107,10 @@ class App extends Component {
 }
 
 function loadArchive() {
-  if (localStorage.getItem('archive') !== 'undefined') {
+  //localStorage.clear('archive')
+  //localStorage.clear('master')
+  //localStorage.clear('daily')
+  if (localStorage.getItem('archive') !== 'undefined' && localStorage.getItem('archive') !== null) {
     return JSON.parse(localStorage.getItem('archive'));
   }else{
     return taskdata.filter((item)=> {
@@ -133,5 +137,14 @@ function loadMaster() {
         return item.list === 'Masterlist'
       })
   }  
+}
+function setArchive(state){
+  localStorage.setItem('archive', JSON.stringify(state));
+}
+function setDaily(state){
+  localStorage.setItem('daily', JSON.stringify(state));
+}
+function setMaster(state){
+  localStorage.setItem('master', JSON.stringify(state));
 }
 export default App;
