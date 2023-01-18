@@ -5,10 +5,13 @@ Goal to make a simple To-Do List and customize it to my needs in the future
 ## Current Goals
 
 - [ ] Prototyping (not uploaded to git)
+- [ ] Delete All of Archive
 
 ## Future Goals
 
 - [ ] contain Date (created / finished)
+- [ ] switch between Dark mode and Light mode
+- [ ] Subtasks
 - [ ] Add table for tomorrow
 - [ ] Polish
 - [ ] Archive View as Pop-up?
