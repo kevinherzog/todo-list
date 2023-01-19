@@ -1,11 +1,12 @@
 import React from "react";
 
-const TaskHeader = () => {
+const TaskHeader = props => {
     return(
         <thead>
             <tr>
                <th>Check</th>
                <th>Task</th>
+               <th><button onClick={() => props.clearArchive()}>Clear</button></th>
             </tr>
         </thead>
     );
@@ -16,6 +17,7 @@ const TaskBody = props => {
             <tr key={id}>
                 <td>  <input type="checkbox" checked={row.checked} onChange={() => props.removeTask(id, row.list )}/> </td>
                 <td>{row.task}</td>
+                <td></td>
             </tr>
         )
     });
@@ -23,10 +25,10 @@ const TaskBody = props => {
 }
 
 const Archive = (props) => {
-    const { taskData, removeTask } = props;
+    const { taskData, clearArchive, removeTask } = props;
     return(
         <table>
-            <TaskHeader />
+            <TaskHeader clearArchive={clearArchive}/>
             <TaskBody taskData={taskData} removeTask={removeTask} />
         </table>
     )

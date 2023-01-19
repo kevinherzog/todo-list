@@ -5,7 +5,6 @@ Goal to make a simple To-Do List and customize it to my needs in the future
 ## Current Goals
 
 - [ ] Prototyping (not uploaded to git)
-- [ ] Delete All of Archive
 
 ## Future Goals
 
@@ -15,7 +14,6 @@ Goal to make a simple To-Do List and customize it to my needs in the future
 - [ ] Add table for tomorrow
 - [ ] Polish
 - [ ] Archive View as Pop-up?
-- [ ] Clear Archive
 - [ ] Repeat every [specified days] for [x] [days, weeks, months], except for [date ranges]
 - [ ] Calender week
 - [ ] How long time expected for task
@@ -25,6 +23,8 @@ Goal to make a simple To-Do List and customize it to my needs in the future
 
 ## Archived
 
+- [x] Clear Archive
+- [x] Delete All of Archive
 - [x] Add Tasks
 - [x] check off tasks
 - [x] move to archive after check

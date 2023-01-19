@@ -17,7 +17,6 @@ class App extends Component {
   handleSubmit = item => {
     if (item.task !== '') {
       this.setState({master: [...this.state.master, item]}, () => {setMaster(this.state.master)})
-      console.log(this.state)
     }
   }
   removeTask = (index, list) =>{
@@ -89,6 +88,11 @@ class App extends Component {
       }, () => {setDaily(this.state.daily)});
     }
   }
+  clearArchive = () =>{
+    this.setState({
+      archive: []
+    }, () => {setArchive(this.state.archive)})
+  }
   render() {
     
     return (
@@ -100,7 +104,7 @@ class App extends Component {
         <h2>Masterlist</h2>
         <TaskTable taskData={this.state.master} removeTask={this.removeTask} moveTask={this.moveTask}/>
         <h2>Archive</h2>
-        <Archive taskData={this.state.archive} removeTask={this.removeTask}/>
+        <Archive taskData={this.state.archive} removeTask={this.removeTask} clearArchive={this.clearArchive}/>
       </div>
     );
   }
