@@ -4,7 +4,7 @@ Goal to make a simple To-Do List and customize it to my needs in the future
 
 ## Current Goals
 
-- [ ] Prototyping (not uploaded to git)
+- [ ] making design more approachable
 
 ## Future Goals
 

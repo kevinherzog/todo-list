@@ -97,13 +97,13 @@ class App extends Component {
     
     return (
       <div>
-        <h1>To-Do List</h1>
+        <h1 className='text-3xl font-bold underline'>To-Do List</h1>
         <TaskAdd handleSubmit={this.handleSubmit} init={this.init} />
-        <h2>Today</h2>
+        <h2 className="text-2xl font-bold underline">Today</h2>
         <TaskTable taskData={this.state.daily} removeTask={this.removeTask} moveTask={this.moveTask}/>
-        <h2>Masterlist</h2>
+        <h2 class="text-2xl font-bold underline">Masterlist</h2>
         <TaskTable taskData={this.state.master} removeTask={this.removeTask} moveTask={this.moveTask}/>
-        <h2>Archive</h2>
+        <h2 class="text-2xl font-bold underline">Archive</h2>
         <Archive taskData={this.state.archive} removeTask={this.removeTask} clearArchive={this.clearArchive}/>
       </div>
     );
