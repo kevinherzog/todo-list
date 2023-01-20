@@ -96,15 +96,27 @@ class App extends Component {
   render() {
     
     return (
-      <div>
-        <h1 className='text-3xl font-bold underline'>To-Do List</h1>
-        <TaskAdd handleSubmit={this.handleSubmit} init={this.init} />
-        <h2 className="text-2xl font-bold underline">Today</h2>
-        <TaskTable taskData={this.state.daily} removeTask={this.removeTask} moveTask={this.moveTask}/>
-        <h2 class="text-2xl font-bold underline">Masterlist</h2>
-        <TaskTable taskData={this.state.master} removeTask={this.removeTask} moveTask={this.moveTask}/>
-        <h2 class="text-2xl font-bold underline">Archive</h2>
-        <Archive taskData={this.state.archive} removeTask={this.removeTask} clearArchive={this.clearArchive}/>
+      <div className='bg-slate-900'>
+        <div className='container mx-auto dark'>
+          <div className='border-2 p-4'>
+            <h1 className='text-3xl font-bold underline'>To-Do List</h1>
+            <TaskAdd handleSubmit={this.handleSubmit} init={this.init} />
+          </div>
+          <div className='xl:grid grid-cols-2 grid-flow-col'>
+            <div className='border-2 p-4'>
+              <h2 className="text-2xl font-bold underline">Today</h2>
+              <TaskTable taskData={this.state.daily} removeTask={this.removeTask} moveTask={this.moveTask}/>
+            </div>
+            <div className='border-2 p-4'>
+              <h2 className="text-2xl font-bold underline">Masterlist</h2>
+              <TaskTable taskData={this.state.master} removeTask={this.removeTask} moveTask={this.moveTask}/>
+            </div>
+          </div>
+          <div className='border-2 p-4'>
+            <h2 className="text-2xl font-bold underline">Archive</h2>
+            <Archive taskData={this.state.archive} removeTask={this.removeTask} clearArchive={this.clearArchive}/>
+          </div>
+        </div>
       </div>
     );
   }
