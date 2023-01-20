@@ -96,24 +96,29 @@ class App extends Component {
   render() {
     
     return (
-      <div className='bg-slate-900'>
+      <div className='bg-slate-900 text-white'>
+        <head>
+          <style>{'body { background-color: rgb(15 23 42);}'}</style>
+        </head>
         <div className='container mx-auto dark'>
-          <div className='border-2 p-4'>
-            <h1 className='text-3xl font-bold underline'>To-Do List</h1>
+          <div className='p-4'>
+            <h1 className='text-3xl font-bold '>To-Do List</h1>
+          </div>
+          <div className='p-4'>            
             <TaskAdd handleSubmit={this.handleSubmit} init={this.init} />
           </div>
           <div className='xl:grid grid-cols-2 grid-flow-col'>
-            <div className='border-2 p-4'>
-              <h2 className="text-2xl font-bold underline">Today</h2>
+            <div className='p-4'>
+              <h2 className="text-2xl font-bold  pb-4 pl-2">Today</h2>
               <TaskTable taskData={this.state.daily} removeTask={this.removeTask} moveTask={this.moveTask}/>
             </div>
-            <div className='border-2 p-4'>
-              <h2 className="text-2xl font-bold underline">Masterlist</h2>
+            <div className='p-4'>
+              <h2 className="text-2xl font-bold  pb-4 pl-2">Masterlist</h2>
               <TaskTable taskData={this.state.master} removeTask={this.removeTask} moveTask={this.moveTask}/>
             </div>
           </div>
-          <div className='border-2 p-4'>
-            <h2 className="text-2xl font-bold underline">Archive</h2>
+          <div className='p-4'>
+            <h2 className="text-2xl font-bold pb-4 pl-2">Archive</h2>
             <Archive taskData={this.state.archive} removeTask={this.removeTask} clearArchive={this.clearArchive}/>
           </div>
         </div>

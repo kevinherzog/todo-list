@@ -4,12 +4,12 @@ Goal to make a simple To-Do List and customize it to my needs in the future
 
 ## Current Goals
 
-- [ ] making design more approachable
+- [ ] switch between Dark mode and Light mode
+- [ ] Take notes for tasks (?)
 
 ## Future Goals
 
 - [ ] contain Date (created / finished)
-- [ ] switch between Dark mode and Light mode
 - [ ] Subtasks
 - [ ] Add table for tomorrow
 - [ ] Polish
@@ -19,10 +19,10 @@ Goal to make a simple To-Do List and customize it to my needs in the future
 - [ ] How long time expected for task
 - [ ] Time actuall task time
 - [ ] Safe start time and end time of task
-- [ ] Take notes for tasks (?)
 
 ## Archived
 
+- [x] making design more approachable
 - [x] Clear Archive
 - [x] Delete All of Archive
 - [x] Add Tasks
